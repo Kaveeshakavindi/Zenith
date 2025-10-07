@@ -59,6 +59,8 @@ export default function Footer({ volume, setVolume }) {
             {/* <a href=""><FontAwesomeIcon icon={faEnvelope} style={{color: "#1e1e1f"}} /></a>
              */}
             {/* You can add any other links Here !!!*/}
+
+            
           </div>
         </div>
         <div className="footerBottom">
