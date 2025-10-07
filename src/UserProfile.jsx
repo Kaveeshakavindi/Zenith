@@ -17,7 +17,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import CustomSound from "./CustomSound.jsx"
 import SetBGMVolume from './SetBGMVolume.jsx';
 
-export default function UserProfile({setVolume,volume}) {
+export default function UserProfile() {
+
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
