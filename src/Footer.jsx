@@ -55,7 +55,7 @@ export default function Footer({ volume, setVolume }) {
           <a href="bhavysarwa@gmail.com"> <FontAwesomeIcon icon={faEnvelope} style={{color: "#252627",}} /></a>
             <a href="https://github.com/bhavy1204" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} style={{color: "#000000"}} /></a>
             <a href="https://www.linkedin.com/in/bhavy-sarva-10ba13265/"><FontAwesomeIcon icon={faLinkedin} style={{color: "#27577c"}} /></a>
-            <a href=""><FontAwesomeIcon icon={faXTwitter} style={{color: "#000000"}} /></a>
+            <a href="https://x.com"><FontAwesomeIcon icon={faXTwitter} style={{color: "#000000"}} /></a>
             {/* <a href=""><FontAwesomeIcon icon={faEnvelope} style={{color: "#1e1e1f"}} /></a>
              */}
             {/* You can add any other links Here !!!*/}
