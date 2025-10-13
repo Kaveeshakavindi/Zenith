@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import { useNotification } from './NotificationSystem';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default function BreakTimer({ duration, onComplete, autoStart = false }) {
@@ -7,14 +8,16 @@ export default function BreakTimer({ duration, onComplete, autoStart = false }) 
     const [remainingTime, setRemainingTime] = useState(()=> duration || 0);
     const [isRunning, setIsRunning] = useState(autoStart);
     const intervalRef = useRef(null);
+    const { showTimerComplete } = useNotification();
 
      useEffect(() => {
         if (remainingTime <= 0 && isRunning) {
             completeSound.current.play();
             setIsRunning(false);
+            showTimerComplete(true); // true means break session completed
             onComplete();
         }
-    }, [remainingTime, isRunning, onComplete]);
+    }, [remainingTime, isRunning, onComplete, showTimerComplete]);
 
     // Reset timer when duration changes
     useEffect(() => {

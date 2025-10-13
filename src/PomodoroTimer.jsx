@@ -1,7 +1,7 @@
 import "./PomodoroTimer.css"
-
 import BreakTimer from "./BreakTimer";
 import FocusTimer from "./FocusTimer";
+import SessionIndicator from "./SessionIndicator";
 import { useState } from "react";
 
 export default function PomodoroTimer({ customTime, customBreakTime }) {
@@ -25,19 +25,19 @@ export default function PomodoroTimer({ customTime, customBreakTime }) {
 
     return (
         <>
+            <SessionIndicator isFocusSession={isPomodoro} />
             {isPomodoro ? (
                 <FocusTimer
                     duration={defaultFocusTime}
                     onComplete={handleSessionComplete}
-                ></FocusTimer>
+                />
             ) : (
                 <BreakTimer
                     duration={defaultBreakTime}
                     onComplete={handleSessionComplete}
                     // autoStart={true}
-                ></BreakTimer>
+                />
             )}
-
         </>
     )
 }
