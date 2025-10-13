@@ -1,0 +1,109 @@
+/* Session Indicator Styles */
+.session-indicator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.session-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.session-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.session-badge:hover::before {
+  left: 100%;
+}
+
+.session-badge.focus {
+  background: linear-gradient(45deg, rgba(76, 175, 80, 0.2), rgba(69, 160, 73, 0.2));
+  border-color: rgba(76, 175, 80, 0.3);
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+.session-badge.break {
+  background: linear-gradient(45deg, rgba(255, 152, 0, 0.2), rgba(245, 124, 0, 0.2));
+  border-color: rgba(255, 152, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+}
+
+.session-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.session-badge.focus .session-icon {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.session-badge.break .session-icon {
+  background: linear-gradient(45deg, #FF9800, #F57C00);
+  color: white;
+}
+
+.session-text {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Animation for session change */
+@keyframes sessionChange {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.session-badge {
+  animation: sessionChange 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .session-badge {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .session-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}

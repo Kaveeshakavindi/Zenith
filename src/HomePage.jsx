@@ -1,7 +1,9 @@
 import { useState } from "react"
 import Navbar from "./Navbar"
 import PomodoroTimer from "./PomodoroTimer"
-import Footer from "./Footer";
+import Footer from "./Footer"
+import ParticleBackground from "./ParticleBackground"
+import StatsPanel from "./StatsPanel"
 
 export default function HomePage(){
 
@@ -11,9 +13,10 @@ export default function HomePage(){
 
     return(
         <>
-            <Navbar setCustomTime={setCustomTime} setCustomBreakTime={setCustomBreakTime} volume={volume} setVolume={setVolume} ></Navbar>
-            <PomodoroTimer customTime={customTime} customBreakTime={customBreakTime}></PomodoroTimer>
-            
+            <ParticleBackground />
+            <Navbar setCustomTime={setCustomTime} setCustomBreakTime={setCustomBreakTime} volume={volume} setVolume={setVolume} />
+            <StatsPanel />
+            <PomodoroTimer customTime={customTime} customBreakTime={customBreakTime} />
             <Footer volume={volume} setVolume={setVolume} />
         </>
     )

@@ -2,5 +2,59 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--homepage-bg);
+  background: var(--homepage-bg);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enhanced Circular Progress Bar Styles */
+.react-circular-progressbar {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  transition: all 0.3s ease;
+}
+
+.react-circular-progressbar .CircularProgressbar-path {
+  stroke-linecap: round;
+  stroke-width: 8;
+  transition: stroke-dasharray 0.5s ease 0s, stroke 0.5s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+.react-circular-progressbar .CircularProgressbar-trail {
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0.3;
+}
+
+.react-circular-progressbar .CircularProgressbar-text {
+  fill: white;
+  font-size: 2rem;
+  font-weight: 700;
+  dominant-baseline: middle;
+  text-anchor: middle;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Add glow effect to progress bar */
+.react-circular-progressbar .CircularProgressbar-path {
+  filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 30px currentColor);
+}
+
+/* Animation for progress bar */
+@keyframes progressGlow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor);
+  }
+  50% { 
+    filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 30px currentColor);
+  }
+}
+
+.react-circular-progressbar .CircularProgressbar-path {
+  animation: progressGlow 2s ease-in-out infinite;
 }

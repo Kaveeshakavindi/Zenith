@@ -1,17 +1,13 @@
-import { Typography } from "@mui/material"
+import React from "react"
 import "./Logo.css"
 
 export default function Logo() {
     return (
-        <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1,
-                 display: { xs: 'none', sm: 'block' }
-                 }} 
-            className="logo"
-        >
-            Zenith
-        </Typography>
+        <div className="logo-container">
+            <div className="logo">
+                <span className="logo-text">Zenith</span>
+                <div className="logo-accent"></div>
+            </div>
+        </div>
     )
 }

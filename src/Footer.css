@@ -1,101 +1,167 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-footer{
-    background-color: var(--bg-color);
-    border-top: 1px solid var(--icon-color);
-}
-.footerContainer{
-    width: 100%;
-    min-height: 210px;
-    padding: 10px 20px 10px;
+
+footer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: auto;
+    position: relative;
 }
 
-.footerTop{
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.footerContainer {
+    width: 100%;
+    min-height: 210px;
+    padding: 2rem 2rem 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footerTop {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
-.footerTop h2{
-    color: var(--icon-color);
-    font-size: 2em;
-    font-weight: bold;
+
+.footerTop h2 {
+    color: white;
+    font-size: 2.5em;
+    font-weight: 800;
     margin: 0;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
 }
-.socialIcons{
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.socialIcons {
     display: flex;
     justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
 }
-.socialIcons a{
+
+.socialIcons a {
     text-decoration: none;
-    padding:  10px;
-    background-color: var(--bg-color);
-    margin: 10px;
-    border-radius: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
 }
-.socialIcons a svg{
-    font-size: 25px;
-    color: black;
-    opacity: 0.9;
-}
-.socialIcons a:hover{
-    background-color: #ffffff;
-    transition: 0.5s;
-}
-.socialIcons a:hover svg{
+
+.socialIcons a svg {
+    font-size: 20px;
     color: white;
-    transition: 0.5s;
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
-.footerNav{
-    margin: 10px 0;
+
+.socialIcons a:hover {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
 }
-.footerNav ul{
+
+.socialIcons a:hover svg {
+    color: white;
+    opacity: 1;
+    transform: scale(1.1);
+}
+.footerNav {
+    margin: 1.5rem 0;
+}
+
+.footerNav ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
-.footerNav ul li a{
-    color:var(--icon-color);
-    margin: 20px;
-    text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s;
 
-}
-.footerNav ul li a:hover{
-    opacity: 1;
-}
-.footerNav ul li button{
-    color: var(--icon-color);
-    margin: 20px;
+.footerNav ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 1.3em;
-    opacity: 0.7;
-    transition: 0.5s;
+    font-size: 1.1em;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    position: relative;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.footerNav ul li button {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    opacity: 0.8;
+    transition: all 0.3s ease;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
 }
-.footerNav ul li button:hover{
+
+.footerNav ul li button:hover {
     opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
-.footerBottom{
-    background-color: #000;
-    padding: 10px;
+
+.footerBottom {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
     text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-.footerBottom p{
+
+.footerBottom p {
     color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
 }
-.designer{
-    color: white;
-    opacity: 0.7;
+
+.designer {
+    color: #4ecdc4;
+    opacity: 1;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0px 5px;
 }
 @media (max-width: 700px){

@@ -94,17 +94,41 @@ export default function CustomizedMenus() {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={() => handleThemeSelect('light')} disableRipple>
-                    Light
+                <MenuItem onClick={() => handleThemeSelect('midnight')} disableRipple>
+                    <div className="theme-option">
+                        <div className="theme-preview midnight"></div>
+                        <span>Midnight</span>
+                    </div>
                 </MenuItem>
-                <MenuItem onClick={() => handleThemeSelect('blue')} disableRipple>
-                    Blue
+                <MenuItem onClick={() => handleThemeSelect('sunset')} disableRipple>
+                    <div className="theme-option">
+                        <div className="theme-preview sunset"></div>
+                        <span>Sunset</span>
+                    </div>
                 </MenuItem>
-                <MenuItem onClick={() => handleThemeSelect('green')} disableRipple>
-                    Green
+                <MenuItem onClick={() => handleThemeSelect('ocean')} disableRipple>
+                    <div className="theme-option">
+                        <div className="theme-preview ocean"></div>
+                        <span>Ocean</span>
+                    </div>
                 </MenuItem>
-                <MenuItem onClick={() => handleThemeSelect('orange')} disableRipple>
-                    Orange
+                <MenuItem onClick={() => handleThemeSelect('forest')} disableRipple>
+                    <div className="theme-option">
+                        <div className="theme-preview forest"></div>
+                        <span>Forest</span>
+                    </div>
+                </MenuItem>
+                <MenuItem onClick={() => handleThemeSelect('lavender')} disableRipple>
+                    <div className="theme-option">
+                        <div className="theme-preview lavender"></div>
+                        <span>Lavender</span>
+                    </div>
+                </MenuItem>
+                <MenuItem onClick={() => handleThemeSelect('rose')} disableRipple>
+                    <div className="theme-option">
+                        <div className="theme-preview rose"></div>
+                        <span>Rose</span>
+                    </div>
                 </MenuItem>
             </StyledMenu>
         </div>
